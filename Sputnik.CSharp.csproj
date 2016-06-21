@@ -75,6 +75,8 @@
     <Compile Include="Assets\Spt_Scripts\Camera\CameraRotator.cs" />
     <Compile Include="Assets\Spt_Scripts\Camera\PostRenderer.cs" />
     <Compile Include="Assets\Spt_Scripts\EditorVisualizers\OrbitVisualizer.cs" />
+    <Compile Include="Assets\Spt_Scripts\EditorVisualizers\PawnPlacer.cs" />
+    <Compile Include="Assets\Spt_Scripts\EditorVisualizers\RingSlotVisualizer.cs" />
     <Compile Include="Assets\Spt_Scripts\EditorVisualizers\SolarSystemVisualizer.cs" />
     <Compile Include="Assets\Spt_Scripts\GameManager.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\Bodies\Moon.cs" />
@@ -85,6 +87,8 @@
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\Motion\SatelliteMotion.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\PlanetSystem.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\SimData\PlanetaryData.cs" />
+    <Compile Include="Assets\Spt_Scripts\SystemSimulation\RingSlots.cs" />
+    <Compile Include="Assets\Spt_Scripts\SystemSimulation\SimData\RingData.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\SolarSystem.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\StellarBody.cs" />
     <Compile Include="Assets\Spt_Scripts\Wireframe\DebugDrawer.cs" />

@@ -25,8 +25,10 @@ public class SolarSystem : MonoBehaviour
     //{
 
     //} Planets move according to their planetary data stuff.
-	//delegatiions cool, so what do we do with the solar system?
+	// delegatiions cool, so what do we do with the solar system?
 
+    /// <summary>
+    /// </summary>
 	public Star HostStar
 	{
 		get
