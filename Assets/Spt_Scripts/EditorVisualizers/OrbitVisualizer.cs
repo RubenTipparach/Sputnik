@@ -13,7 +13,8 @@ public class OrbitVisualizer : MonoBehaviour
     /// <summary>
     /// The number of turns it takes for one polar coordinate cell to be passed.
     /// </summary>
-    [SerializeField]
+    //[SerializeField]
+    // get this from the motion data. Stars dont need it!
     private int _turnsPerCell;
 
     private SolarSystem _sol;

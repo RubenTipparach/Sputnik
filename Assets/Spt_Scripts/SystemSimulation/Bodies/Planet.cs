@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// Can I really run this in edit mode?
 /// </summary>
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class Planet : MonoBehaviour
 {
     /// <summary>
@@ -39,11 +39,15 @@ public class Planet : MonoBehaviour
 	/// </summary>
 	void Update()
 	{
-		// needs some interpolation ;)
-		if(Input.GetKeyDown(KeyCode.T))
+        transform.Rotate(Vector3.up * Time.deltaTime * 10);
+
+        // needs some interpolation ;)
+        if (Input.GetKeyDown(KeyCode.T))
 		{
 			Run();
 		}
+
+        _planetMotion.UpdatePosition();
 	}
 
 	/// <summary>

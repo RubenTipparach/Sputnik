@@ -22,6 +22,11 @@ public class PlanetaryMotion
 	/// </summary>
 	private PlanetaryData _planetData;
 
+    float _currentDegree = 0;
+
+    float _toDegree = 0;
+
+    float yAmount = 0;
 	/// <summary>
 	/// Initializes a new instance of the <see cref="PlanetaryMotion"/> class.
 	/// Using these clases as independent simulation systems.
@@ -32,19 +37,35 @@ public class PlanetaryMotion
 	{
 		_transform = transform;
 		_planetData = planetData;
+
+        _currentDegree = ((float)_planetData.PeriodMovementPerTurn / (float)_planetData.TotalOrbitalPeriod) * 360.0f;
+        _toDegree = _currentDegree;
+
+        yAmount = _transform.position.y;
     }
 
-	/// <summary>
-	/// Runs the step. Planets move counter clockwise yo.
-	/// </summary>
-	public void RunStep()
+    /// <summary>
+    /// Runs the step. Planets move counter clockwise yo.
+    /// </summary>
+    public void RunStep()
 	{
-		_planetData.CurrentOrbitalPeriodPosition = (_planetData.CurrentOrbitalPeriodPosition + 1) % _planetData.TotalOrbitalPeriod;
+        //the modulus thing makes it lerp backwards
+        _planetData.CurrentOrbitalPeriodPosition = (_planetData.PeriodMovementPerTurn + _planetData.CurrentOrbitalPeriodPosition);// % _planetData.TotalOrbitalPeriod;
 
-		float yDegree = ((float)_planetData.PeriodMovementPerTurn / (float)_planetData.TotalOrbitalPeriod) * 360.0f ;
-		Debug.Log("rotating by" + yDegree);
-        _transform.RotateAround(_transform.GetComponent<Planet>().HostStar.transform.position, Vector3.up, yDegree);
+        _toDegree = ((float)_planetData.CurrentOrbitalPeriodPosition  / (float)_planetData.TotalOrbitalPeriod) * 360.0f ;
+		//Debug.Log("rotating by" + yDegree);
 		// blah blah blah whatever.
 		//_transform.position = 
 	}
+
+    public void UpdatePosition()
+    {
+        _currentDegree = Mathf.Lerp(_currentDegree, _toDegree, Time.deltaTime * 10);
+
+        //Debug.Log("_currentDegree " + _currentDegree);
+        //_transform.RotateAround(_transform.GetComponent<Planet>().HostStar.transform.position, Vector3.up, _currentDegree);
+        _transform.position = Quaternion.Euler(Vector3.up * _currentDegree)
+            * _transform.GetComponent<Planet>().HostStar.transform.forward
+            * _planetData.StellarDistance + Vector3.up * yAmount;
+    }
 }
