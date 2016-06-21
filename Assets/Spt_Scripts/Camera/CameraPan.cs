@@ -13,6 +13,9 @@ public class CameraPan : MonoBehaviour {
         float forward = Input.GetAxis("Vertical");
         float right = Input.GetAxis("Horizontal");
 
-        transform.Translate(new Vector3(right, 0, forward));
+		Vector3 rotationEuler = Camera.main.transform.rotation.eulerAngles;
+		Quaternion flatRotation = Quaternion.Euler(0, rotationEuler.y, rotationEuler.z);
+
+		transform.Translate(flatRotation * (Vector3.right * right + Vector3.forward * forward));
     }
 }

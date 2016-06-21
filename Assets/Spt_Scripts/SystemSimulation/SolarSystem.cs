@@ -21,9 +21,18 @@ public class SolarSystem : MonoBehaviour
     /// </summary>
     /// <remarks>Sputnik uses non-newtonian physics,
     /// rather it uses Decorative Interstellar Turn-Based Physics (DIT-P)</remarks>
-    public void UpdateSimulation()
-    {
+    //public void UpdateSimulation()
+    //{
 
-    }
+    //} Planets move according to their planetary data stuff.
+	//delegatiions cool, so what do we do with the solar system?
+
+	public Star HostStar
+	{
+		get
+		{
+			return _star;
+		}
+	}
 }
 
