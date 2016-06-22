@@ -14,8 +14,10 @@ public class PawnVisualizer : MonoBehaviour {
 		var pawn = GetComponent<Pawn>();
 		var parentSystem = transform.parent.GetComponent<RingSlots>();
 
-		transform.position = parentSystem.Rings[pawn.CurrentSlot].LocalPosition 
-			+ parentSystem.transform.position.y * Vector3.up;
-		
-	}
+        if (!pawn.GameStarted)
+        {
+            transform.position = parentSystem.Rings[pawn.CurrentSlot].LocalPosition
+                + parentSystem.transform.position.y * Vector3.up;
+        }
+    }
 }

@@ -10,6 +10,9 @@ using UnityEngine;
 /// R = radius
 /// http://www.physicsclassroom.com/class/circles/Lesson-4/Mathematics-of-Satellite-Motion
 /// </summary>
+/// <remarks>
+/// Lol I ended up using none of that crap!
+/// </remarks>
 public class PlanetaryMotion
 {
 	/// <summary>
@@ -22,11 +25,12 @@ public class PlanetaryMotion
 	/// </summary>
 	private PlanetaryData _planetData;
 
-    float _currentDegree = 0;
+    private float _currentDegree = 0;
 
-    float _toDegree = 0;
+    private float _toDegree = 0;
 
-    float yAmount = 0;
+    private float yAmount = 0;
+
 	/// <summary>
 	/// Initializes a new instance of the <see cref="PlanetaryMotion"/> class.
 	/// Using these clases as independent simulation systems.

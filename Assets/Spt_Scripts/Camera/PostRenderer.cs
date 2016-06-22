@@ -8,9 +8,10 @@ public class PostRenderer : MonoBehaviour {
     [SerializeField]
     private Material[] _lineMat;
 
-	
-
+    // These list thingies are like call backs, but allow for an easy initialization of materials
+    // loaded from the _lineMat array.
 	private List<DrawCircleWrapper> circleDrawers = new List<DrawCircleWrapper>();
+
     private List<DrawLineWrapper> lineDrawers = new List<DrawLineWrapper>();
 
     // Use this for initialization
@@ -26,9 +27,7 @@ public class PostRenderer : MonoBehaviour {
     void OnPostRender()
     {
         foreach(var circle in circleDrawers)
-        {
-			
-
+        {	
 			GLLines.CircleDrawing(_lineMat[Convert.ToInt32(circle.mat)], circle.color, circle.iteration, circle.radius, circle.source, circle.rotatiom);
         }
 

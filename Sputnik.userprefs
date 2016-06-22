@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Sputnik.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Spt_Scripts\SystemSimulation\SolarSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Spt_Scripts\Camera\CameraRotator.cs">
     <Files>
       <File FileName="Assets\Spt_Scripts\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Spt_Scripts\SystemSimulation\Bodies\Planet.cs" Line="1" Column="1" />
       <File FileName="Assets\Spt_Scripts\SystemSimulation\SolarSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Spt_Scripts\Camera\CameraRotator.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

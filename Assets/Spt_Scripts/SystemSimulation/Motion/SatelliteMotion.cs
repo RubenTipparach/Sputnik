@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 /// <summary>
 /// Posibility of adding satellites to the game. Moons are visitable locations.
@@ -11,4 +12,3 @@ using System.Text;
 public class SatelliteMotion
 {
 }
-

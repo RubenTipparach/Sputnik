@@ -3,33 +3,62 @@ using System.Collections;
 
 public class Pawn : MonoBehaviour {
 
-	PawnMotion _pawnMotion;
 
-	[SerializeField]
-	private int _currentSlot;
+    [SerializeField]
+    private int _currentSlot;
+
+    [SerializeField]
+    private PawnData _pawnData;
+
+    PawnMotion _pawnMotion;
 
 	RingSlots _slots;
+
+    private bool _gameStarted = false;
 
 	// Use this for initialization
 	void Awake () {
 		_slots = transform.parent.GetComponent<RingSlots>();
-	}
+
+    }
+
+    void Start()
+    {
+        _pawnData = new PawnData() {
+            currenLocation = transform.localPosition,
+            toLocation = transform.localPosition,
+            nodePosition = _currentSlot,
+            slots = _slots
+        };
+
+        _pawnMotion = new PawnMotion(transform, _pawnData);
+
+        _gameStarted = true;
+    }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		
+        _pawnMotion.UpdatePosition();
+
+        // don't forget to offset local position!
+        transform.position = _pawnData.currenLocation + _slots.transform.position;
 	}
 
-	void EndTurn()
+    /// <summary>
+    /// Ends the turn, updates the motion's position, and gets the new cordinates to inter-
+    /// polate to.
+    /// </summary>
+	private void EndTurn()
 	{
-
 		var planets = transform.parent.GetComponent<SolarSystem>().Planets;
 		foreach (var planet in planets)
 		{
 			planet.Run();
 		}
 
+        _pawnData.nodePosition = _currentSlot;
+        _pawnMotion.RunStep();
 	}
 
 	/// <summary>
@@ -46,10 +75,19 @@ public class Pawn : MonoBehaviour {
 		}
 		set
 		{
-			EndTurn();
             _currentSlot = value;
-		}
+            EndTurn();
+        }
 	}
+
+    // For the editor! lolz.
+    public bool GameStarted
+    {
+        get
+        {
+            return _gameStarted;
+        }
+    }
 
 	/// <summary>
 	/// Gets the valid slots. Options to the next connector!
