@@ -13,6 +13,8 @@ public class RingData
 
     public int[] connections;
 
+	public bool goesToGoal;
+
     public Vector3 LocalPosition
     {
         get

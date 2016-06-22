@@ -36,5 +36,13 @@ public class SolarSystem : MonoBehaviour
 			return _star;
 		}
 	}
+
+	public List<Planet> Planets
+	{
+		get
+		{
+			return _planets;
+		}
+	}
 }
 

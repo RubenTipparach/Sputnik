@@ -42,10 +42,6 @@ public class Planet : MonoBehaviour
         transform.Rotate(Vector3.up * Time.deltaTime * 10);
 
         // needs some interpolation ;)
-        if (Input.GetKeyDown(KeyCode.T))
-		{
-			Run();
-		}
 
         _planetMotion.UpdatePosition();
 	}

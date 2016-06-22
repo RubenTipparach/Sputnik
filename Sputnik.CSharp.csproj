@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.0b18</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -76,6 +74,7 @@
     <Compile Include="Assets\Spt_Scripts\Camera\PostRenderer.cs" />
     <Compile Include="Assets\Spt_Scripts\EditorVisualizers\OrbitVisualizer.cs" />
     <Compile Include="Assets\Spt_Scripts\EditorVisualizers\PawnPlacer.cs" />
+    <Compile Include="Assets\Spt_Scripts\EditorVisualizers\PawnVisualizer.cs" />
     <Compile Include="Assets\Spt_Scripts\EditorVisualizers\RingSlotVisualizer.cs" />
     <Compile Include="Assets\Spt_Scripts\EditorVisualizers\SolarSystemVisualizer.cs" />
     <Compile Include="Assets\Spt_Scripts\GameManager.cs" />
@@ -85,12 +84,15 @@
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\Motion\PawnMotion.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\Motion\PlanetaryMotion.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\Motion\SatelliteMotion.cs" />
+    <Compile Include="Assets\Spt_Scripts\SystemSimulation\Pawn.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\PlanetSystem.cs" />
-    <Compile Include="Assets\Spt_Scripts\SystemSimulation\SimData\PlanetaryData.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\RingSlots.cs" />
+    <Compile Include="Assets\Spt_Scripts\SystemSimulation\SimData\PlanetaryData.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\SimData\RingData.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\SolarSystem.cs" />
     <Compile Include="Assets\Spt_Scripts\SystemSimulation\StellarBody.cs" />
+    <Compile Include="Assets\Spt_Scripts\UI\ButtonManager.cs" />
+    <Compile Include="Assets\Spt_Scripts\UI\MovePawnButton.cs" />
     <Compile Include="Assets\Spt_Scripts\Wireframe\DebugDrawer.cs" />
     <Compile Include="Assets\Spt_Scripts\Wireframe\GLLines.cs" />
     <Compile Include="Assets\Spt_Scripts\Wireframe\OrbitGuides.cs" />
